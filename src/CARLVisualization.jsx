@@ -72,7 +72,7 @@ const CARLVisualization = () => {
             }
         }
 
-        let extraApp: string | null = null as any; // keep types loose for canvas; adjust in TS projects
+        let extraApp = null; // keep types loose for canvas; adjust in TS projects
 
         // If no preinstalled capacity was available → pick an extra app with max remaining capacity
         if (usedApps.length === 0) {
@@ -108,8 +108,8 @@ const CARLVisualization = () => {
             'App C': 'bg-purple-500',
             'App D': 'bg-orange-500',
             'App E': 'bg-pink-500',
-        } as Record<string, string>;
-        return colors[appName] || 'bg-slate-500';
+        };
+        return colors[appName] || 'bg-slate-500';[appName] || 'bg-slate-500';
     };
 
     const getCapacityColor = (current, max) => {
@@ -123,7 +123,7 @@ const CARLVisualization = () => {
         <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 p-8">
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-4xl font-bold text-white mb-2 text-center">CARL Algorithm Visualization</h1>
-                <p className="text-slate-300 text-center mb-6">Capacity-Aware Load Balancing</p>
+                <p className="text-slate-300 text-center mb-6">Capacity-Aware Reuse-first Layered Allocation</p>
 
                 {/* ✅ CURRENT USER DETAILS SECTION */}
                 {currentStep < users.length ? (
